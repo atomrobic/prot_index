@@ -367,14 +367,14 @@
 
       <div class="bg-white w-full max-w-5xl rounded-3xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
 
-        <button onclick="closeModal()"
-          class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-2xl font-bold">
+        <button id="closeQuoteModal" type="button"
+          class="absolute top-5 right-5 z-10 text-teal-400 hover:text-gray-700 text-2xl font-bold">
           &times;
         </button>
 
         <div class="grid md:grid-cols-2">
-          <div class="hidden md:block relative min-h-full">
-            <img src="assets\images\grok-image-ec340b40-aaa7-483a-bce8-657338284cc6.png" alt="Technician installing a digital advertising screen" class="w-full h-full object-cover rounded-l-3xl">
+          <div class="relative">
+            <img src="assets\images\grok-image-ec340b40-aaa7-483a-bce8-657338284cc6.png" alt="Technician installing a digital advertising screen" class="w-full h-68 md:h-full object-cover rounded-t-3xl md:rounded-t-none md:rounded-l-3xl">
           </div>
           <div class="p-8 md:p-10">
             <h2 class="text-3xl font-bold mb-6 text-center">Request a Custom Quote</h2>
@@ -469,6 +469,7 @@
     document.getElementById('quoteModal').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
+    document.getElementById('closeQuoteModal').addEventListener('click', closeModal);
 
     document.getElementById('quoteForm').addEventListener('submit', function(e) {
       e.preventDefault();
