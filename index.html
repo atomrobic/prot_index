@@ -71,13 +71,11 @@
               We install & manage beautiful in-store digital screens so your offers, promotions and messages stay fresh, bold and impossible to ignore.
             </p>
 
-            <div class="mt-10 flex flex-col sm:flex-row gap-4">
-              <a href="#pricing" class="inline-flex justify-center items-center bg-teal text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-teal/90 transition shadow-lg shadow-teal/20">
-                Get Your Screen Today
-              </a>
-              <a href="#pricing" class="inline-flex justify-center items-center border-2 border-gray-300 text-gray-700 font-semibold text-lg px-8 py-4 rounded-full hover:border-teal hover:text-teal transition">
-                View Pricing
-              </a>
+            <div class="mt-10 flex flex-col sm:flex-row gap-2">
+             
+              <button type="button" onclick="openModal()" class="inline-flex justify-center items-center border-2 border-gray-300 text-gray-700 font-semibold text-lg px-8 py-4 rounded-full hover:border-teal hover:text-teal transition">
+                Request a Custom Quote
+              </button>
             </div>
 
             <div class="mt-12 grid grid-cols-3 gap-6 border-t border-gray-100 pt-8 text-center">
@@ -341,44 +339,6 @@
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="bg-gray-50 border-t border-gray-100 py-20 md:py-28">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="reveal text-center mb-16">
-          <p class="text-sm tracking-widest uppercase font-semibold text-teal">Pricing</p>
-          <h2 class="mt-4 text-4xl md:text-5xl font-bold">Simple. Transparent. Profitable.</h2>
-          <p class="mt-5 text-gray-600 text-lg max-w-2xl mx-auto">
-            One extra sale per day usually covers the monthly fee — while the screen works non-stop.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div class="reveal rounded-3xl bg-white border-2 border-gray-200 shadow-xl p-8 md:p-10 flex flex-col">
-            <p class="text-sm uppercase tracking-wider font-semibold text-gray-500">One-time Setup</p>
-            <p class="mt-6 text-6xl md:text-7xl font-extrabold text-gray-900">£199</p>
-            <p class="mt-4 text-gray-600">Hardware + professional installation included.</p>
-            <div class="mt-auto pt-8">
-              <a href="#contact" class="block w-full bg-gray-800 text-white font-semibold text-center py-4 rounded-full hover:bg-gray-900 transition">
-                Start Setup
-              </a>
-            </div>
-          </div>
-
-          <div class="reveal delay-1 rounded-3xl bg-gradient-to-br from-teal to-teal/90 text-white p-8 md:p-10 flex flex-col shadow-2xl shadow-teal/30 relative overflow-hidden">
-            <div class="absolute -top-6 -right-6 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
-            <p class="text-sm uppercase tracking-wider font-semibold text-white/80">Monthly Subscription</p>
-            <p class="mt-6 text-6xl md:text-7xl font-extrabold">£79</p>
-            <p class="mt-4 text-white/90">Unlimited updates, 8+ fresh designs/month, full support & remote management.</p>
-            <div class="mt-auto pt-8">
-              <a href="#contact" class="block w-full bg-white text-teal font-bold text-center py-4 rounded-full hover:bg-gray-50 transition shadow-lg">
-                Get Started → Most Popular
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACT / FINAL CTA -->
     <section id="contact" class="py-20 md:py-28">
       <div class="max-w-5xl mx-auto px-6">
@@ -393,14 +353,101 @@
             </p>
           </div>
           <div class="flex flex-col gap-4">
-            <a href="#" class="bg-teal text-white font-bold text-lg text-center py-5 rounded-full hover:bg-teal/90 transition shadow-lg">
+            <button type="button" onclick="openModal()" class="bg-teal text-white font-bold text-lg text-center py-5 rounded-full hover:bg-teal/90 transition shadow-lg">
               Book Installation Slot
-            </a>
+            </button>
            
           </div>
         </div>
       </div>
     </section>
+
+    <div id="quoteModal"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50 px-4">
+
+      <div class="bg-white w-full max-w-5xl rounded-3xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
+
+        <button onclick="closeModal()"
+          class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-2xl font-bold">
+          &times;
+        </button>
+
+        <div class="grid md:grid-cols-2">
+          <div class="hidden md:block relative min-h-full">
+            <img src="assets\images\grok-image-ec340b40-aaa7-483a-bce8-657338284cc6.png" alt="Technician installing a digital advertising screen" class="w-full h-full object-cover rounded-l-3xl">
+          </div>
+          <div class="p-8 md:p-10">
+            <h2 class="text-3xl font-bold mb-6 text-center">Request a Custom Quote</h2>
+
+            <form id="quoteForm" class="space-y-5">
+
+          <div>
+            <label class="block text-sm font-semibold mb-2">Full Name</label>
+            <input type="text" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-teal" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-2">Business Name</label>
+            <input type="text" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-teal" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-2">Business Postcode</label>
+            <input type="text" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-teal" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-2">Mobile Number</label>
+            <input type="tel" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-teal" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-2">Email Address</label>
+            <input type="email" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-teal" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-3">Interested In:</label>
+            <div class="space-y-2">
+              <label class="flex items-center gap-3">
+                <input type="radio" name="interest" required>
+                <span>Standard Display</span>
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="radio" name="interest">
+                <span>Commercial Display</span>
+              </label>
+              <label class="flex items-center gap-3">
+                <input type="radio" name="interest">
+                <span>Not Sure, Need Advice</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-2">Message (Optional)</label>
+            <textarea rows="4"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-teal"
+              placeholder="Tell us where you’d like the screen installed or any questions."></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full bg-teal text-white font-bold text-lg py-4 rounded-full hover:bg-teal/90 transition shadow-lg">
+            Get My Custom Proposal
+          </button>
+
+          <p class="text-center text-sm text-gray-500">
+            We’ll review your location and respond within 24 hours.
+          </p>
+              <p id="quoteGreeting" class="hidden text-center text-sm font-semibold text-teal">
+                Thank you! Your request has been sent successfully.
+              </p>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -409,6 +456,31 @@
   </footer>
 
   <script>
+    function openModal() {
+      document.getElementById('quoteModal').classList.remove('hidden');
+      document.getElementById('quoteModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('quoteModal').classList.add('hidden');
+      document.getElementById('quoteModal').classList.remove('flex');
+    }
+
+    document.getElementById('quoteModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    document.getElementById('quoteForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const greeting = document.getElementById('quoteGreeting');
+      greeting.classList.remove('hidden');
+      this.reset();
+      setTimeout(() => {
+        closeModal();
+        greeting.classList.add('hidden');
+      }, 1800);
+    });
+
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) e.target.classList.add('on');

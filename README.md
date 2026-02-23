@@ -1,0 +1,3 @@
+✅ Pricing section removed entirely
+✅ "Request a Custom Quote" appears as a glowing pill/tab anchor in its own section with all your specified fields — Full Name, Business Name, Postcode, Mobile, Email, the 3 interest radio options (with clickable styled cards), optional message, submit button, and the "24 hours" note
+✅ "Book Installation Slot" button now opens a popup modal with a mini booking form (Name, Location, Preferred Date, Mobile) — clicking outside or pressing Escape closes it
